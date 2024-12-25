@@ -4,7 +4,7 @@
 # Robótica Computacional - 
 # autor: Stephan Brommer Gutiérrez
 # correo: alu0101493497@ull.edu.es
-# fecha: 28/11/2024
+# fecha: 07/01/2025
 # Grado en Ingeniería Informática (Cuarto)
 # Práctica: Resolución de la cinemática inversa mediante CCD
 #           (Cyclic Coordinate Descent).

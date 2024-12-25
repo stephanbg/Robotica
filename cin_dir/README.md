@@ -1,4 +1,4 @@
-# Cinemática directa
+# Cinemática Directa
 
 En este directorio se encuentra alojado el código de la cinemática directa.
 

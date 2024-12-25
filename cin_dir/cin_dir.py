@@ -249,5 +249,3 @@ def main():
     print("Ocurrió un error: " + str(e))
 
 main()
-# PARA QUE QUEDE BIEN EJECUTAR CON
-# python3 Descargas/cin_dir.py parametrosDH.json

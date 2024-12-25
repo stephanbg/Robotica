@@ -2,11 +2,11 @@
 # -*- coding: utf-8 -*-
 
 # Robótica Computacional
+# autor: Stephan Brommer Gutiérrez
+# correo: alu0101493497@ull.edu.es
+# fecha: 07/01/2025
 # Grado en Ingeniería Informática (Cuarto)
 # Práctica: Resolución de la cinemática directa mediante Denavit-Hartenberg.
-# Alumno: Stephan Brommer Gutiérrez
-# Correo: alu0101493497@ull.edu.es
-# Fecha 7 de Enero de 2025
 
 import sys
 from math import *

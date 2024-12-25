@@ -1,0 +1,7 @@
+{
+  "articulaciones": [
+    { "tipo": "prismatica", "a": 5.0, "min_a": 0, "max_a": 10 },
+    { "tipo": "revolucion", "th": 0.0, "min_th": -90, "max_th": 90, "a": 5.0 },
+    { "tipo": "revolucion", "th": 0.0, "min_th": -90, "max_th": 90, "a": 5.0 }
+  ]
+}

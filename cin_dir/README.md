@@ -4,7 +4,7 @@ En este directorio se encuentra alojado el código de la cinemática directa.
 
 Para ejecutar (situarse en el directorio donde se encuentra cin_dir.py):
 ```bash
-python3 .\cin_dir.py parametrosDH.json
+python3 .\cin_dir.py parametros-manipulador5.json
 ```
 
 En el fichero JSON se tiene que configurar de la siguiente manera:

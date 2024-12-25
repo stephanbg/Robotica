@@ -15,6 +15,7 @@ import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 import json
 import os
+import traceback
 
 # ******************************************************************************
 # Declaración de funciones
@@ -223,25 +224,31 @@ def construir_parametros(orden_T, origen, transf, EF):
     inicio = 1
   return parametros
 
-# Verificar que el número de parámetros sea el correcto
-if len(sys.argv) != 2:
-  raise Exception("Error en el número de parámetros, tienen que ser 2")
+# Función principal
+def main():
+  try:
+    # Verificar que el número de parámetros sea el correcto
+    if len(sys.argv) != 2:
+      raise Exception("Error en el número de parámetros, tienen que ser 2")
+    nombre_archivo = sys.argv[1] # El nombre del archivo es el primer argumento
+    d, th, a, al, orden_T, EF, num_articulaciones = leer_datos_desde_json(nombre_archivo) # Parámetros de JSON
+    origenes = obtener_origenes_articulaciones(num_articulaciones + 1) # Orígenes para cada articulación más raíz
+    T = calculo_matrices_T(d, th, a, al, orden_T)
+    transf = aplicar_transformaciones(T, origenes)
+    parametros = construir_parametros(orden_T, origenes[0], transf, EF)
 
-nombre_archivo = sys.argv[1] # El nombre del archivo es el primer argumento
-d, th, a, al, orden_T, EF, num_articulaciones = leer_datos_desde_json(nombre_archivo) # Parámetros de JSON
-origenes = obtener_origenes_articulaciones(num_articulaciones + 1) # Orígenes para cada articulación más raíz
-T = calculo_matrices_T(d, th, a, al, orden_T)
-transf = aplicar_transformaciones(T, origenes)
-parametros = construir_parametros(orden_T, origenes[0], transf, EF)
+    # Mostrar resultado de la cinemática directa
+    if EF is not None:
+      muestra_origenes(parametros, transf[EF])
+      muestra_robot(parametros, transf[EF])
+    else:
+      muestra_origenes(parametros)
+      muestra_robot(parametros)  
+    input()
+  except Exception as e:
+    # Captura el error y muestra solo un mensaje en el main
+    print("Ocurrió un error: " + str(e))
 
-# Mostrar resultado de la cinemática directa
-if EF is not None:
-  muestra_origenes(parametros, transf[EF])
-  muestra_robot(parametros, transf[EF])
-else:
-  muestra_origenes(parametros)
-  muestra_robot(parametros)  
-input()
-
+main()
 # PARA QUE QUEDE BIEN EJECUTAR CON
 # python3 Descargas/cin_dir.py parametrosDH.json

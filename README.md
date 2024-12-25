@@ -1,6 +1,6 @@
 # Robotica
 
-En este repositorio se encuentran las siguientes prácticas
+En este repositorio se encuentran las siguientes prácticas (preparadas de mejor manera para windows)
 
 ---
 
